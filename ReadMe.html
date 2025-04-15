@@ -1,0 +1,548 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSheetAI - Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        h3 {
+            color: #3498db;
+            margin-top: 20px;
+        }
+        code {
+            background-color: #f8f8f8;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .note {
+            background-color: #e7f5fe;
+            border-left: 4px solid #3498db;
+            padding: 10px 15px;
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+        .warning {
+            background-color: #fff5e6;
+            border-left: 4px solid #e67e22;
+            padding: 10px 15px;
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+        .filename {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .color-preview {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            vertical-align: middle;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+        }
+        .feature-new {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 10px 15px;
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+        .feature-new::before {
+            content: "NOUVEAU";
+            font-weight: bold;
+            color: #2e7d32;
+            margin-right: 5px;
+        }
+        .feature-updated {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 10px 15px;
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+        .feature-updated::before {
+            content: "MIS À JOUR";
+            font-weight: bold;
+            color: #1565c0;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>StyleSheetAI</h1>
+
+    <h2>Description</h2>
+    <p>
+        StyleSheetAI est une feuille de style CSS complète conçue pour améliorer l'interface utilisateur des applications 
+        web basées sur Process Studio. Elle propose une mise en page compacte, des libellés améliorés, des animations fluides, 
+        et des sections optimisées pour rendre l'application plus moderne, cohérente et agréable à utiliser.
+    </p>
+
+    <div class="feature-updated">
+        Version 2.0.0 : Amélioration des styles pour les champs de saisie, optimisation du menu, effets d'interaction améliorés, 
+        et corrections spécifiques pour les fonctionnalités avancées.
+    </div>
+
+    <h2>Fonctionnalités</h2>
+    <ul>
+        <li><strong>Mise en page compacte</strong> - Optimisation de l'utilisation de l'espace écran</li>
+        <li><strong>Effets d'interaction</strong> - Animations subtiles lors du focus, hover et autres interactions</li>
+        <li><strong>Retours visuels améliorés</strong> - Mise en évidence des champs obligatoires</li>
+        <li><strong>Menu optimisé</strong> - Barre de menu redessinée avec des effets visuels modernes</li>
+        <li><strong>Animations fluides</strong> - Transitions pour l'apparition et la disparition des éléments</li>
+        <li><strong>Styles des onglets améliorés</strong> - Navigation par onglets avec animation de la barre de sélection</li>
+        <li><strong>Compatibilité mobile</strong> - Styles responsifs pour tous types d'appareils</li>
+        <li><strong>Support pour l'impression</strong> - Optimisation pour les versions imprimées des formulaires</li>
+        <li><strong>Accessibilité</strong> - Support des préférences de réduction de mouvement</li>
+        <li><strong>Optimisation des champs de lecture</strong> - Meilleure gestion des champs en lecture seule et vides</li>
+    </ul>
+
+    <h2>Structure des fichiers</h2>
+    <ul>
+        <li><span class="filename">StyleSheetAI.css</span> - Feuille de style principale (Version 2.0.0)</li>
+    </ul>
+
+    <h2>Compatibilité</h2>
+    <p>
+        Cette feuille de style est compatible avec toutes les versions récentes de Process Studio et fonctionne sur tous les navigateurs modernes 
+        (Chrome, Firefox, Edge, Safari). Elle a été optimisée pour fonctionner avec les composants DevExpress.
+    </p>
+
+    <h2>Installation</h2>
+    
+    <h3>Méthode d'installation (simple et rapide)</h3>
+    <ol>
+        <li>Copiez le fichier <code>StyleSheetAI.css</code> dans le répertoire <code>~/Styles/</code> de votre application web</li>
+        <li>Dans Process Studio, ouvrez les formulaires que vous souhaitez styliser</li>
+        <li>Lors de la publication du formulaire, sélectionnez "StyleSheetAI" comme feuille de style dans les options de publication</li>
+        <li>Publiez les formulaires pour appliquer la nouvelle feuille de style</li>
+    </ol>
+
+    <div class="note">
+        <strong>Note :</strong> Il n'est pas nécessaire de redémarrer l'application ou le serveur après l'installation de la feuille de style.
+    </div>
+
+    <h2>Structure et variables</h2>
+    
+    <h3>Variables globales</h3>
+    <p>
+        StyleSheetAI utilise des variables CSS pour faciliter la personnalisation. Voici les principales catégories :
+    </p>
+
+    <h4>Couleurs principales</h4>
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Valeur par défaut</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>--primary</code></td>
+            <td><span class="color-preview" style="background-color: #2563eb"></span>#2563eb</td>
+            <td>Couleur principale de l'application</td>
+        </tr>
+        <tr>
+            <td><code>--primary-light</code></td>
+            <td><span class="color-preview" style="background-color: #60a5fa"></span>#60a5fa</td>
+            <td>Version plus claire de la couleur principale</td>
+        </tr>
+        <tr>
+            <td><code>--primary-ultralight</code></td>
+            <td><span class="color-preview" style="background-color: #eff6ff"></span>#eff6ff</td>
+            <td>Version très claire pour les fonds et effets subtils</td>
+        </tr>
+        <tr>
+            <td><code>--primary-dark</code></td>
+            <td><span class="color-preview" style="background-color: #1e40af"></span>#1e40af</td>
+            <td>Version plus foncée pour les interactions et surbrillances</td>
+        </tr>
+    </table>
+
+    <h4>Couleurs d'état</h4>
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Valeur par défaut</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>--color-error</code></td>
+            <td><span class="color-preview" style="background-color: #dc2626"></span>#dc2626</td>
+            <td>Pour les erreurs et notifications critiques</td>
+        </tr>
+        <tr>
+            <td><code>--color-success</code></td>
+            <td><span class="color-preview" style="background-color: #10b981"></span>#10b981</td>
+            <td>Pour les confirmations et succès</td>
+        </tr>
+        <tr>
+            <td><code>--color-warning</code></td>
+            <td><span class="color-preview" style="background-color: #f59e0b"></span>#f59e0b</td>
+            <td>Pour les avertissements</td>
+        </tr>
+        <tr>
+            <td><code>--color-info</code></td>
+            <td><span class="color-preview" style="background-color: #0ea5e9"></span>#0ea5e9</td>
+            <td>Pour les informations et indicateurs</td>
+        </tr>
+    </table>
+
+    <h4>Couleurs neutres</h4>
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Valeur par défaut</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>--text-dark</code></td>
+            <td><span class="color-preview" style="background-color: #1e293b"></span>#1e293b</td>
+            <td>Texte principal et accentué</td>
+        </tr>
+        <tr>
+            <td><code>--text-medium</code></td>
+            <td><span class="color-preview" style="background-color: #475569"></span>#475569</td>
+            <td>Texte standard</td>
+        </tr>
+        <tr>
+            <td><code>--text-light</code></td>
+            <td><span class="color-preview" style="background-color: #64748b"></span>#64748b</td>
+            <td>Texte secondaire et désactivé</td>
+        </tr>
+        <tr>
+            <td><code>--border-color</code></td>
+            <td><span class="color-preview" style="background-color: #cbd5e0"></span>#cbd5e0</td>
+            <td>Couleur par défaut des bordures</td>
+        </tr>
+        <tr>
+            <td><code>--bg-light</code></td>
+            <td><span class="color-preview" style="background-color: #e9f1f8"></span>#e9f1f8</td>
+            <td>Fond légèrement coloré</td>
+        </tr>
+        <tr>
+            <td><code>--bg-ultralight</code></td>
+            <td><span class="color-preview" style="background-color: #f1f5f9"></span>#f1f5f9</td>
+            <td>Fond très légèrement coloré</td>
+        </tr>
+        <tr>
+            <td><code>--bg-white</code></td>
+            <td><span class="color-preview" style="background-color: #ffffff"></span>#ffffff</td>
+            <td>Fond blanc</td>
+        </tr>
+    </table>
+
+    <h4>Espacements</h4>
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Valeur par défaut</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>--spacing-xs</code></td>
+            <td>0.125rem</td>
+            <td>Espacement très petit</td>
+        </tr>
+        <tr>
+            <td><code>--spacing-sm</code></td>
+            <td>0.25rem</td>
+            <td>Espacement petit</td>
+        </tr>
+        <tr>
+            <td><code>--spacing-md</code></td>
+            <td>0.5rem</td>
+            <td>Espacement moyen</td>
+        </tr>
+        <tr>
+            <td><code>--spacing-lg</code></td>
+            <td>0.75rem</td>
+            <td>Espacement grand</td>
+        </tr>
+        <tr>
+            <td><code>--spacing-xl</code></td>
+            <td>1rem</td>
+            <td>Espacement très grand</td>
+        </tr>
+    </table>
+
+    <h3>Structure CSS</h3>
+    <p>
+        La feuille de style est organisée en sections thématiques :
+    </p>
+    <ul>
+        <li><strong>Variables globales</strong> - Définition des couleurs, espacements et animations</li>
+        <li><strong>Espacements ultra-compacts</strong> - Optimisation de la densité d'information</li>
+        <li><strong>Styles des libellés</strong> - Amélioration visuelle des étiquettes de champs</li>
+        <li><strong>Champs de saisie compacts</strong> - Optimisation des zones de saisie</li>
+        <li><strong>Boutons radio et cases à cocher</strong> - Styles modernisés pour les contrôles</li>
+        <li><strong>Animations d'apparition et disparition</strong> - Effets de transition pour une meilleure UX</li>
+        <li><strong>Optimisation des onglets</strong> - Amélioration de la navigation par onglets</li>
+        <li><strong>Styles pour le menu</strong> - Refonte complète de la barre de menu</li>
+        <li><strong>Module Links</strong> - Styles spécifiques pour le module de liens</li>
+        <li><strong>Optimisations responsives</strong> - Adaptations pour différentes tailles d'écran</li>
+    </ul>
+
+    <h2>Personnalisation</h2>
+    
+    <h3>Modifier les couleurs principales</h3>
+    <p>
+        Pour adapter le thème de couleurs à votre charte graphique, modifiez les variables dans la section <code>:root</code> au début du fichier CSS.
+    </p>
+    <pre><code>:root {
+    /* Couleurs principales */
+    --primary: #2563eb;         /* Remplacez par votre couleur principale */
+    --primary-light: #60a5fa;   /* Version plus claire (environ 30% plus claire) */
+    --primary-ultralight: #eff6ff; /* Version très claire pour les fonds */
+    --primary-dark: #1e40af;    /* Version plus foncée pour les surbrillances */
+    
+    /* Autres variables... */
+}</code></pre>
+
+    <h3>Adapter la densité d'information</h3>
+    <p>
+        Si vous souhaitez ajuster l'espacement entre les éléments, modifiez les valeurs suivantes :
+    </p>
+    <pre><code>/* Champs de saisie compacts */
+.apsFieldInputBody .apsFieldInputEdit {
+    padding: 0.25rem 0.5rem !important; /* Ajustez ces valeurs pour plus/moins d'espace */
+    min-height: 1.8rem !important; /* Ajustez cette valeur pour la hauteur minimale */
+}
+
+/* Sections plus compactes */
+.tableBorder:not(.embedded-view-container) {
+    border-radius: 4px !important; /* Ajustez pour des coins plus/moins arrondis */
+}</code></pre>
+
+    <h2>Fonctionnalités spécifiques</h2>
+    
+    <h3>Champs de saisie compacts</h3>
+    <div class="feature-updated">
+        <p>
+            StyleSheetAI propose des champs de saisie optimisés avec une taille compacte 
+            pour une meilleure utilisation de l'espace tout en conservant une excellente lisibilité.
+        </p>
+    </div>
+    <p>
+        Les optimisations incluent :
+    </p>
+    <ul>
+        <li>Hauteur minimale définie pour une cohérence visuelle</li>
+        <li>Taille de police équilibrée pour une meilleure lisibilité</li>
+        <li>Effets visuels lors du focus et du survol</li>
+        <li>Style spécifique pour les champs désactivés</li>
+        <li>Traitement optimisé pour les champs en lecture seule</li>
+    </ul>
+
+    <h3>Optimisation des champs en lecture seule</h3>
+    <div class="feature-new">
+        <p>
+            StyleSheetAI améliore considérablement la présentation des champs en lecture seule,
+            avec une gestion spécifique pour les champs vides.
+        </p>
+    </div>
+    <p>
+        Les améliorations comprennent :
+    </p>
+    <ul>
+        <li>Affichage optimisé avec largeur adaptative</li>
+        <li>Hauteur minimale garantie pour les champs vides</li>
+        <li>Fond légèrement coloré pour différencier les champs de lecture</li>
+        <li>Style spécifique pour les champs vides avec une largeur fixe</li>
+    </ul>
+
+    <h3>Effets interactifs</h3>
+    <p>
+        StyleSheetAI intègre plusieurs effets interactifs pour améliorer l'expérience utilisateur :
+    </p>
+    <ul>
+        <li><strong>Effets sur les libellés</strong> - Décalage et mise en couleur au focus</li>
+        <li><strong>Astérisque distinctif</strong> - Indication des champs obligatoires</li>
+        <li><strong>Animation de la barre d'onglet</strong> - Effet de glissement pour l'indicateur d'onglet actif</li>
+        <li><strong>Effets d'apparition et disparition</strong> - Transitions douces pour les éléments qui changent d'état</li>
+        <li><strong>Animation du menu</strong> - Effets sur hover et clic pour les boutons du menu</li>
+    </ul>
+
+    <h3>Animations et transitions</h3>
+    <p>
+        StyleSheetAI inclut plusieurs animations pour améliorer l'expérience utilisateur :
+    </p>
+    <ul>
+        <li><strong>fadeIn</strong> - Animation d'apparition en fondu</li>
+        <li><strong>slideDown</strong> - Glissement vers le bas pour les éléments qui apparaissent</li>
+        <li><strong>expand</strong> - Expansion douce des éléments</li>
+        <li><strong>sectionExpand/sectionCollapse</strong> - Animations pour l'ouverture/fermeture des sections</li>
+        <li><strong>flash</strong> - Effet clignotant pour attirer l'attention</li>
+        <li><strong>tab-indicator-slide</strong> - Animation de la barre bleue des onglets</li>
+        <li><strong>aps-menu-pulse</strong> - Animation pulsante pour les notifications</li>
+    </ul>
+
+    <h3>Adaptations responsives</h3>
+    <p>
+        Sur les petits écrans, la disposition est automatiquement adaptée pour une meilleure lisibilité :
+    </p>
+    <ul>
+        <li>Taille et espacement adaptés du menu pour les écrans tactiles</li>
+        <li>Padding ajusté pour une meilleure utilisation de l'espace</li>
+    </ul>
+
+    <h2>Barre de menu optimisée</h2>
+    <div class="feature-updated">
+        <p>
+            StyleSheetAI propose une refonte complète de la barre de menu avec un design plus moderne 
+            et des effets visuels améliorés.
+        </p>
+    </div>
+    <p>
+        La barre de menu inclut les améliorations suivantes :
+    </p>
+    <ul>
+        <li>Taille équilibrée des boutons pour une meilleure cohérence visuelle</li>
+        <li>Effets d'élévation et de transformation au survol</li>
+        <li>Mise en évidence des boutons principaux (Enregistrer, Éditer)</li>
+        <li>Animations sur les icônes pour un retour visuel plus intuitif</li>
+        <li>Indicateur de notification TeamConnect avec animation pulsante</li>
+        <li>Design cohérent avec le reste de l'interface</li>
+    </ul>
+
+    <h3>Module Links</h3>
+    <div class="feature-new">
+        <p>
+            StyleSheetAI intègre des styles spécifiques pour le module Links, améliorant 
+            la présentation des liens entrants et sortants.
+        </p>
+    </div>
+    <p>
+        Les optimisations comprennent :
+    </p>
+    <ul>
+        <li>Structure organisée pour les liens entrants et sortants</li>
+        <li>Hauteur définie pour éviter les changements d'affichage dynamique</li>
+        <li>Styles de texte optimisés pour une meilleure lisibilité</li>
+        <li>Gestion des en-têtes et des contenus des liens</li>
+    </ul>
+
+    <h2>Dépannage</h2>
+    
+    <h3>La feuille de style n'est pas appliquée</h3>
+    <ul>
+        <li>Vérifiez que le fichier CSS a été correctement copié dans le répertoire <code>~/Styles/</code></li>
+        <li>Assurez-vous que la feuille de style a été sélectionnée dans les propriétés du formulaire</li>
+        <li>Videz le cache du navigateur en utilisant Ctrl+F5 ou la fonction "Vider le cache et actualiser"</li>
+        <li>Vérifiez que le formulaire a bien été republié après la sélection de la feuille de style</li>
+    </ul>
+
+    <h3>Conflits de style avec d'autres composants</h3>
+    <ul>
+        <li>Si certains composants personnalisés ne s'affichent pas correctement, vérifiez s'ils utilisent des styles spécifiques qui entrent en conflit</li>
+        <li>Utilisez l'inspecteur d'éléments du navigateur (F12) pour identifier les règles CSS en conflit</li>
+        <li>Ajoutez des règles supplémentaires spécifiques au composant problématique dans une feuille de style séparée</li>
+    </ul>
+
+    <h3>Problèmes avec les animations</h3>
+    <ul>
+        <li>Si certaines animations ne s'exécutent pas correctement, vérifiez la compatibilité du navigateur avec les keyframes CSS</li>
+        <li>Pour les problèmes de performance, utilisez l'option "Réduire les animations" du navigateur</li>
+        <li>En cas de conflits avec d'autres animations, inspectez les sélecteurs CSS pour identifier les chevauchements</li>
+    </ul>
+
+    <h3>Performance des animations</h3>
+    <ul>
+        <li>Sur les appareils moins puissants, certaines animations peuvent ralentir l'interface</li>
+        <li>Pour désactiver toutes les animations, ajoutez cette règle à la fin du fichier CSS :</li>
+    </ul>
+    <pre><code>* {
+    animation: none !important;
+    transition: none !important;
+}</code></pre>
+
+    <h2>Limitations connues</h2>
+    <ul>
+        <li>Certains contrôles DevExpress avancés peuvent nécessiter des ajustements supplémentaires</li>
+        <li>Les navigateurs très anciens (IE11 et antérieurs) ne sont pas pleinement supportés</li>
+        <li>Les animations CSS peuvent consommer davantage de ressources sur certains appareils</li>
+        <li>Certains aspects du module Links peuvent nécessiter des ajustements spécifiques selon l'utilisation</li>
+    </ul>
+
+    <h2>Évolution et maintenance</h2>
+    
+    <h3>Ajout de fonctionnalités</h3>
+    <p>Pour ajouter de nouvelles fonctionnalités ou personnalisations :</p>
+    <ol>
+        <li>Créez une copie de sauvegarde du fichier CSS original</li>
+        <li>Ajoutez vos modifications à la fin du fichier pour faciliter les mises à jour futures</li>
+        <li>Commentez clairement vos modifications pour la maintenance</li>
+        <li>Testez sur différents navigateurs et tailles d'écran</li>
+    </ol>
+
+    <div class="warning">
+        <strong>Attention :</strong> Évitez de modifier directement les règles existantes. Préférez ajouter vos règles personnalisées à la fin du fichier en utilisant des sélecteurs plus spécifiques pour garantir la priorité.
+    </div>
+
+    <h3>Tests</h3>
+    <p>Testez la feuille de style avec différents formulaires et dans différents navigateurs pour vous assurer de sa compatibilité.</p>
+
+    <div class="note">
+        <strong>Conseil :</strong> Pour tester rapidement vos modifications, utilisez l'inspecteur d'éléments du navigateur (F12) pour appliquer temporairement vos changements avant de les intégrer au fichier CSS.
+    </div>
+
+    <hr>
+    <p><strong>Auteur :</strong> Richard Garcia</p>
+    <p><strong>Version :</strong> v2.0.0</p>
+    <p><strong>Licence :</strong> @Avanteam - Tous droits réservés</p>
+</body>
+</html>

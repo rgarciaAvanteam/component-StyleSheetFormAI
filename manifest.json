@@ -1,0 +1,18 @@
+{
+    "name": "SYLESHEET AI",
+    "displayName": "Feuille de Style AI",
+    "version": "2.0.0",
+    "author": "Avanteam",
+    "description": "StyleSheetAI est une feuille de style CSS complète conçue pour améliorer l'interface utilisateur des applications web basées sur Process Studio. Elle propose une mise en page compacte, des libellés améliorés, des animations fluides, et des sections optimisées pour rendre l'application plus moderne, cohérente et agréable à utiliser.",
+    "category": "STYLES",
+    "minPlatformVersion": "23.1.0",
+    "recommendedPlatformVersion": "23.1.0",
+    "repository": "https://github.com/votre-compte/component-COMPONENT_NAME",
+    "dependencies": [],
+    "tags": ["STYLE,FORMULAIRE"],
+    "installation": {
+      "requiresRestart": false,
+      "targetPath": "Styles",
+      "customActions": ["install.ps1"]
+    }
+  }

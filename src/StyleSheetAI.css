@@ -1,0 +1,638 @@
+/* Feuille de style complète avec mise en page compacte, libellés améliorés, animations et sections optimisées - sans carrés colorés */
+/*	Version : 1.0.0 	*/
+
+
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+    /* Couleurs principales */
+    --primary: #2563eb;
+    --primary-light: #60a5fa;
+    --primary-ultralight: #eff6ff;
+    --primary-dark: #1e40af;
+    /* Couleurs d'état */
+    --color-error: #dc2626;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-info: #0ea5e9;
+    /* Couleurs neutres */
+    --text-dark: #1e293b;
+    --text-medium: #475569;
+    --text-light: #64748b;
+    --border-color: #cbd5e0;
+    --bg-light: #e9f1f8;
+    --bg-ultralight: #f1f5f9;
+    --bg-white: #ffffff;
+    /* Espacements */
+    --spacing-xs: 0.125rem;
+    --spacing-sm: 0.25rem;
+    --spacing-md: 0.5rem;
+    --spacing-lg: 0.75rem;
+    --spacing-xl: 1rem;
+    /* Ombrages */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-focus: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    /* Animation */
+    --transition-fast: 150ms ease;
+    --transition-normal: 200ms ease;
+    --transition-slow: 300ms ease;
+}
+
+/* ===== ESPACEMENTS ULTRA-COMPACTS ===== */
+
+/* Sections plus compactes */
+.tableBorder:not(.embedded-view-container) {
+    border-radius: 4px !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+
+
+/* ===== STYLES AMÉLIORÉS DES LIBELLÉS ===== */
+
+/* Style principal pour tous les libellés */
+.apsFieldLabelBody {
+    color: var(--text-medium) !important;
+    font-weight: 500 !important;
+    font-size: 0.80rem !important;
+}
+
+
+/* Mise en évidence des libellés au focus */
+.apsFieldBody:has(.apsFieldInputEdit:focus) .apsFieldLabelBody {
+    color: var(--primary) !important;
+    font-weight: 600 !important;
+    transform: translateX(2px) !important;
+}
+/* Effet sur hover pour montrer l'interactivité */
+.apsFieldBody:hover .apsFieldLabelBody {
+    color: var(--text-dark) !important;
+}
+
+/* Style pour les champs obligatoires */
+.apsFieldBody.is-required .apsFieldLabelBody {
+    font-weight: 600 !important;
+}
+
+.apsFieldBody.is-required .apsFieldLabelBody::after {
+        content: " *" !important;
+        color: var(--color-error) !important;
+        font-weight: 700 !important;
+        font-size: 1.1em !important;
+        position: relative !important;
+        top: 0 !important;
+        margin-left: 2px !important;
+        transition: transform 0.3s ease !important;
+}    	
+/* États spécifiques des libellés */
+.apsFieldBody:has(.apsFieldInputEdit:disabled) .apsFieldLabelBody {
+    opacity: 0.65 !important;
+    color: var(--text-light) !important;
+    font-style: italic !important;
+}
+.apsFieldBody:has(.apsFieldInputRead) .apsFieldLabelBody {
+    color: var(--text-medium) !important;
+}
+
+.apsFieldBody:has(.apsFieldValidationError:not([style*="none"])) .apsFieldLabelBody {
+    color: var(--color-error) !important;
+}
+/* ===== CHAMPS DE SAISIE COMPACTS ===== */
+ /* Champs de saisie compacts */
+.apsFieldInputBody .apsFieldInputEdit {
+    padding: 0.25rem 0.5rem !important;
+    height: auto !important;
+    min-height: 1.8rem !important;
+    line-height: 1.2 !important;
+    font-size: 0.875rem !important;
+    border-color: var(--border-color) !important;
+    border-radius: 3px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* États des champs */
+.apsFieldInputBody .apsFieldInputEdit:hover:not(:focus):not(:disabled) {
+	border-color: var(--primary-light) !important;
+}
+
+.apsFieldInputBody .apsFieldInputEdit:focus {
+	border-color: var(--primary) !important;
+	box-shadow: var(--shadow-focus) !important;
+	outline: none !important;
+}
+
+.apsFieldInputBody .apsFieldInputEdit:disabled {
+	background-color: #f1f5f9 !important;
+	opacity: 0.7 !important;
+	cursor: not-allowed !important;
+}
+
+/* Optimisation des champs en lecture seule */
+.apsFieldInputRead {
+    display: inline-block !important; /* Au lieu de block */
+    width: auto !important; /* Au lieu d'une largeur fixe */
+    min-width: 100%;
+    max-width: 100% !important; /* Pour éviter le débordement */
+    padding: 0.25rem 0.5rem !important;
+    background-color: var(--bg-light) !important;
+    border-radius: 3px !important;
+    line-height: 1.4em !important;
+    min-height: 1.4em !important;
+    font-size: 0.8rem !important;
+}
+
+/* Style spécifique pour les champs vides */
+.apsFieldInputRead:empty {
+	display: inline-block !important;
+	width: 15em !important; /* Largeur fixe pour champs vides */
+	min-height: 1.4em !important; /* Hauteur minimale visible */
+} 
+
+
+/* ===== OPTIMISATION DES BOUTONS RADIO ET CASES À COCHER ===== */
+
+/* Groupe de boutons radio */
+.apsFieldRadioInputEdit {
+    padding: 0.125rem 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.75rem !important;
+}
+
+.apsFieldRadioInputEdit input {
+	margin-right: 0.25rem !important;
+}
+
+.apsFieldRadioInputEdit label {
+	font-size: 0.75rem !important;
+	transition: color var(--transition-fast) !important;
+}
+
+/* Style amélioré pour les options sélectionnées */
+.apsFieldRadioInputEdit input:checked + label {
+	color: var(--primary) !important;
+}
+
+/* ===== ANIMATIONS D'APPARITION ET DISPARITION ===== */
+
+
+
+/* Animation d'apparition et disparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation de glissement vers le bas */
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        max-height: 800px; /* Valeur suffisamment grande */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation d'expansion */
+@keyframes expand {
+    from {
+        transform: scale(0.97);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation pour l'expansion des sections */
+@keyframes sectionExpand {
+    from {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        max-height: 2000px; /* Valeur suffisamment grande */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour la contraction des sections */
+@keyframes sectionCollapse {
+    from {
+        max-height: 2000px; /* Valeur suffisamment grande */
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Animation de flash pour attirer l'attention */
+@keyframes flash {
+    0%, 100% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: rgba(37, 99, 235, 0.1);
+    }
+}
+
+
+
+/* Pour les champs individuels */
+.apsFieldBody.visibilityrule-shown {
+    animation: expand 0.25s ease-out forwards !important;
+    will-change: opacity, transform !important;
+}
+
+/* Pour les sections */
+.ApsSection.visibilityrule-shown,
+.tableBorder.visibilityrule-shown,
+div[id^="Section"].visibilityrule-shown {
+    animation: slideDown 0.3s ease-out forwards !important;
+}
+
+/* Animation pour les champs qui viennent d'apparaître */
+.just-appeared {
+    animation: flash 1s ease !important;
+}
+
+
+/* ===== OPTIMISATION DES ONGLETS ===== */
+
+
+/* Créer notre propre barre bleue animée */
+.dxtcLite_MaterialCompact .dxtc-activeTab {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.dxtcLite_MaterialCompact .dxtc-activeTab::before {
+	content: "" !important;
+	position: absolute !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	height: 2px !important; /* Épaisseur de la barre bleue visible dans l'image */
+	background-color: #1996EB !important; /* Couleur bleue de votre image */
+	transform-origin: center !important;
+	animation: tab-indicator-slide 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+	z-index: 10 !important; /* Assurer qu'elle soit au-dessus des autres éléments */
+}
+
+/* Animation de la barre bleue */
+@keyframes tab-indicator-slide {
+    0% {transform: scaleX(0);}
+    100% { transform: scaleX(1);}
+}
+
+.dxtc-activeTab {
+    position: relative !important;
+    font-weight: 600 !important;
+    color: var(--primary) !important;
+}
+.dxtc-tab {
+    padding: 0.375rem 0.625rem !important;
+    font-size: 1rem !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+
+
+/* ===== STYLES POUR LE MENU ===== */
+
+/* Variables contextuelles */
+.aps-menu {
+    --menu-primary: #2563eb;
+    --menu-primary-light: #60a5fa;
+    --menu-primary-dark: #1e40af;
+    --menu-primary-ultralight: #eff6ff;
+    --menu-success: #10b981;
+    --menu-warning: #f59e0b;
+    --menu-error: #ef4444;
+    --menu-text: #1e293b;
+    --menu-text-light: #64748b;
+    --menu-bg: #ffffff;
+    --menu-bg-light: #f8fafc;
+    --menu-border: #e2e8f0;
+}
+
+/* Conteneur principal du menu */
+body .aps-menu.apsModuleActionBar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.5rem 1rem !important;
+    background: linear-gradient(to right, var(--menu-bg), var(--menu-bg-light)) !important;
+    border-bottom: 1px solid var(--menu-border) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Conteneurs internes */
+body .aps-menu .apsModuleActionBarActions {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+body .aps-menu .apsModuleActionBarFavorite,
+body .aps-menu .apsModuleActionBarTeamConnect {
+    margin-left: 0.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Style de base des boutons - TAILLE ÉQUILIBRÉE */
+body .aps-menu .aps-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.5rem 0.875rem !important; /* Padding réduit */
+    min-width: 2.5rem !important; /* Largeur légèrement réduite */
+    min-height: 2.5rem !important; /* Hauteur légèrement réduite */
+    border: 2px solid transparent !important;
+    border-radius: 0.375rem !important; /* Rayon réduit */
+    font-size: 0.95rem !important; /* Taille équilibrée */
+    font-weight: 500 !important; /* Poids modéré */
+    color: var(--menu-text) !important;
+    background-color: transparent !important;
+    cursor: pointer !important;
+    position: relative !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+    /* Effet hover */
+    body .aps-menu .aps-button:hover {
+        color: var(--menu-primary) !important;
+        background-color: var(--menu-primary-ultralight) !important;
+        border-color: var(--menu-primary-light) !important;
+        box-shadow: 0 3px 6px rgba(37, 99, 235, 0.15) !important;
+        transform: translateY(-2px) !important;
+    }
+
+    /* Effet actif/clic */
+    body .aps-menu .aps-button:active {
+        transform: translateY(0) !important;
+        box-shadow: 0 1px 2px rgba(37, 99, 235, 0.1) !important;
+    }
+
+/* Bouton favori */
+body .aps-menu .apsModuleActionBarFavorite .aps-button {
+    border-radius: 50% !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+    body .aps-menu .apsModuleActionBarFavorite .aps-button:hover {
+        color: var(--menu-warning) !important;
+        transform: scale(1.1) !important;
+    }
+
+    body .aps-menu .apsModuleActionBarFavorite .aps-button.selected {
+        color: var(--menu-warning) !important;
+        background-color: rgba(245, 158, 11, 0.1) !important;
+    }
+
+/* Style pour les icônes FontAwesome dans les boutons */
+body .aps-menu .aps-button .fa {
+    transition: transform 0.25s ease !important;
+    font-size: 1.1rem !important; /* Taille réduite */
+}
+
+body .aps-menu .aps-button:hover .fa {
+    transform: scale(1.15) !important;
+}
+
+/* Notification TeamConnect */
+body .aps-menu .teamConnect-unread {
+    background-color: var(--menu-error) !important;
+    color: white !important;
+    padding: 0.15rem 0.5rem !important;
+    border-radius: 0.25rem !important;
+    font-size: 0.8rem !important; /* Taille réduite */
+    font-weight: 600 !important;
+    animation: aps-menu-pulse 1.5s infinite !important;
+}
+
+@keyframes aps-menu-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Styles spécifiques pour les boutons DevExpress dans le menu */
+body .aps-menu .dxm-main {
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+/* Items de menu */
+body .aps-menu .dxm-item {
+    background: transparent !important;
+    border: none !important;
+    margin-right: 0.375rem !important; /* Espacement modéré */
+}
+
+/* Styles des items - TAILLE ÉQUILIBRÉE */
+body .aps-menu .dxm-content {
+    border-radius: 0.375rem !important;
+    border: 2px solid transparent !important;
+    transition: all 0.25s ease !important;
+}
+
+body .aps-menu .dxm-hovered .dxm-content {
+    background-color: var(--menu-primary-ultralight) !important;
+    border-color: var(--menu-primary-light) !important;
+    box-shadow: 0 3px 6px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Icônes et texte dans les items - TAILLE ÉQUILIBRÉE */
+body .aps-menu .dxm-content span {
+    transition: color 0.25s ease !important;
+    font-size: 0.85rem !important; /* Taille équilibrée */
+}
+
+body .aps-menu .dxm-image {
+    transition: transform 0.25s ease !important;
+    transform: scale(1.05) !important; /* Légère augmentation */
+}
+
+body .aps-menu .dxm-hovered .dxm-image {
+    transform: scale(1.15) !important; /* Augmentation modérée au survol */
+}
+
+/* Bouton Enregistrer */
+body .aps-menu .dxm-item[name="Document.Save"] .dxm-content {
+    background-color: var(--menu-primary) !important;
+    color: white !important;
+    font-weight: 600 !important; /* Gras modéré */
+    box-shadow: 0 2px 5px rgba(37, 99, 235, 0.25) !important;
+    padding-left: 1.25rem !important; /* Espace modéré */
+    padding-right: 1.25rem !important;
+}
+
+    body .aps-menu .dxm-item[name="Document.Save"] .dxm-content span {
+        color: white !important;
+        font-size: 0.90rem !important; /* Légèrement plus grand */
+    }
+
+body .aps-menu .dxm-item[name="Document.Save"].dxm-hovered .dxm-content {
+    background-color: var(--menu-primary-dark) !important;
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Bouton Éditer */
+body .aps-menu .dxm-item[name="Document.Edit"] .dxm-content {
+    border: 2px solid var(--menu-primary) !important;
+    color: var(--menu-primary) !important;
+    padding-left: 1.25rem !important; /* Espace modéré */
+    padding-right: 1.25rem !important;
+}
+
+    body .aps-menu .dxm-item[name="Document.Edit"] .dxm-content span {
+        color: var(--menu-primary) !important;
+        font-size: 0.975rem !important; /* Légèrement plus grand */
+    }
+
+body .aps-menu .dxm-item[name="Document.Edit"].dxm-hovered .dxm-content {
+    background-color: var(--menu-primary-ultralight) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Sous-menus */
+body .aps-menu .dxm-popup {
+    border: none !important;
+    border-radius: 0.375rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    padding: 0.375rem !important;
+}
+
+
+    body .aps-menu .dxm-popup .dxm-content span {
+        font-size: 0.825rem !important; /* Texte des sous-menus */
+    }
+
+/* Adaptations responsives */
+@media (max-width: 768px) {
+    body .aps-menu.apsModuleActionBar {
+        padding: 0.375rem 0.75rem !important;
+    }
+
+    body .aps-menu .aps-button,
+    body .aps-menu .dxm-content {
+        padding: 0.4rem 0.675rem !important;
+    }
+}
+
+
+
+/*------ Links Module ------*/
+.apsLinkBody {
+    display: block;
+    position: relative;
+    height: 115px;
+}
+
+.apsLinksOutBody {
+    display: block;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+    width: 40%;
+}
+
+.apsLinksInBody {
+    display: block;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+    width: 40%;
+}
+
+.apsLinksOut, .apsLinksIn {
+    display: block;
+    position: relative;
+    height: 50px;
+    overflow-y: auto;
+}
+
+.apsLinksOutDisplay, .apsLinksInDisplay {
+    color: #0088E4;
+    font-family: Verdana, sans-serif;
+    font-size: 0.7em;
+    line-height: 12.6pt;
+    padding-left: 10px;
+}
+
+.apsLinksOutHeader, .apsLinksInHeader {
+    background-repeat: no-repeat;
+    padding-left: 5px;
+    color: #0088E4;
+    font-family: Verdana, sans-serif;
+    font-size: 0.7em;
+    font-weight: bolder;
+    line-height: 12.6pt;
+}
+
+.apsLinksOutHeader {
+    /*background-image: url(images/Links_Out.gif);*/
+    /*padding-left: 20px;*/
+    border: none;
+}
+
+.apsLinksInHeader {
+    /*background-image: url(images/Links_In.gif);*/
+    /*padding-left: 20px;*/
+    border: none;
+}
+
+.apsLinkToolbars {
+    display: block;
+    position: relative;
+    height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: Silver;
+}
+/*--- END Links Module -----*/
+
+/*---- Ajax ----*/
+div.ajax__calendar_container {
+    z-index: 1;
+}
+/*---- End Ajax ----*/
+
